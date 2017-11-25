@@ -7,14 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9BEA2561FC56B2C009C466F /* DownloadViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BEA2551FC56B2C009C466F /* DownloadViewCell.swift */; };
+		D9BEA2581FC56CFF009C466F /* DownloadTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BEA2571FC56CFF009C466F /* DownloadTableViewController.swift */; };
+		D9BEA25C1FC571AE009C466F /* DownloadItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BEA25B1FC571AE009C466F /* DownloadItem.swift */; };
 		D9D8D2711FB30900004E93E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D8D2701FB30900004E93E5 /* AppDelegate.swift */; };
 		D9D8D2731FB30900004E93E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D8D2721FB30900004E93E5 /* ViewController.swift */; };
 		D9D8D2761FB30900004E93E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9D8D2741FB30900004E93E5 /* Main.storyboard */; };
 		D9D8D2781FB30900004E93E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9D8D2771FB30900004E93E5 /* Assets.xcassets */; };
 		D9D8D27B1FB30900004E93E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9D8D2791FB30900004E93E5 /* LaunchScreen.storyboard */; };
+		D9EF9F3D1FC161F60069E67B /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EF9F3C1FC161F60069E67B /* MessageViewController.swift */; };
+		D9EF9F411FC16E3A0069E67B /* MessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EF9F401FC16E3A0069E67B /* MessageItem.swift */; };
+		D9EF9F431FC17C720069E67B /* MessageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EF9F421FC17C720069E67B /* MessageViewCell.swift */; };
+		D9EF9F451FC1962B0069E67B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EF9F441FC1962B0069E67B /* ChatViewController.swift */; };
+		D9EF9F471FC196980069E67B /* PersonalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EF9F461FC196980069E67B /* PersonalInformationViewController.swift */; };
+		D9EF9F491FC196B40069E67B /* ClassCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EF9F481FC196B40069E67B /* ClassCheckViewController.swift */; };
+		D9EF9F4B1FC196C00069E67B /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EF9F4A1FC196C00069E67B /* DownloadViewController.swift */; };
+		D9EF9F4D1FC196DD0069E67B /* MyCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EF9F4C1FC196DD0069E67B /* MyCourseViewController.swift */; };
+		D9EF9F4F1FC196E70069E67B /* MyHomeworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EF9F4E1FC196E70069E67B /* MyHomeworkViewController.swift */; };
+		D9EF9F511FC1971E0069E67B /* HomeworkRemindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EF9F501FC1971E0069E67B /* HomeworkRemindViewController.swift */; };
+		D9EF9F531FC19C470069E67B /* PersonalInformationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EF9F521FC19C470069E67B /* PersonalInformationItem.swift */; };
+		D9EF9F551FC1A5020069E67B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EF9F541FC1A5020069E67B /* MainTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D9BEA2551FC56B2C009C466F /* DownloadViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewCell.swift; sourceTree = "<group>"; };
+		D9BEA2571FC56CFF009C466F /* DownloadTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadTableViewController.swift; sourceTree = "<group>"; };
+		D9BEA25B1FC571AE009C466F /* DownloadItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadItem.swift; sourceTree = "<group>"; };
 		D9D8D26D1FB30900004E93E5 /* CSerHelper_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSerHelper_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D8D2701FB30900004E93E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9D8D2721FB30900004E93E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +40,18 @@
 		D9D8D2771FB30900004E93E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9D8D27A1FB30900004E93E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9D8D27C1FB30900004E93E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9EF9F3C1FC161F60069E67B /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		D9EF9F401FC16E3A0069E67B /* MessageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItem.swift; sourceTree = "<group>"; };
+		D9EF9F421FC17C720069E67B /* MessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewCell.swift; sourceTree = "<group>"; };
+		D9EF9F441FC1962B0069E67B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		D9EF9F461FC196980069E67B /* PersonalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationViewController.swift; sourceTree = "<group>"; };
+		D9EF9F481FC196B40069E67B /* ClassCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCheckViewController.swift; sourceTree = "<group>"; };
+		D9EF9F4A1FC196C00069E67B /* DownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
+		D9EF9F4C1FC196DD0069E67B /* MyCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseViewController.swift; sourceTree = "<group>"; };
+		D9EF9F4E1FC196E70069E67B /* MyHomeworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHomeworkViewController.swift; sourceTree = "<group>"; };
+		D9EF9F501FC1971E0069E67B /* HomeworkRemindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkRemindViewController.swift; sourceTree = "<group>"; };
+		D9EF9F521FC19C470069E67B /* PersonalInformationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationItem.swift; sourceTree = "<group>"; };
+		D9EF9F541FC1A5020069E67B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +65,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D9377D611FC8AA03004D3A47 /* MessageView */ = {
+			isa = PBXGroup;
+			children = (
+				D9EF9F401FC16E3A0069E67B /* MessageItem.swift */,
+				D9EF9F421FC17C720069E67B /* MessageViewCell.swift */,
+				D9EF9F3C1FC161F60069E67B /* MessageViewController.swift */,
+			);
+			path = MessageView;
+			sourceTree = "<group>";
+		};
+		D9377D621FC8AA2D004D3A47 /* ChatView */ = {
+			isa = PBXGroup;
+			children = (
+				D9EF9F441FC1962B0069E67B /* ChatViewController.swift */,
+			);
+			path = ChatView;
+			sourceTree = "<group>";
+		};
+		D9377D631FC8AA55004D3A47 /* ClassCheckView */ = {
+			isa = PBXGroup;
+			children = (
+				D9EF9F481FC196B40069E67B /* ClassCheckViewController.swift */,
+			);
+			path = ClassCheckView;
+			sourceTree = "<group>";
+		};
+		D9377D641FC8AA78004D3A47 /* DownloadView */ = {
+			isa = PBXGroup;
+			children = (
+				D9EF9F4A1FC196C00069E67B /* DownloadViewController.swift */,
+				D9BEA25B1FC571AE009C466F /* DownloadItem.swift */,
+				D9BEA2551FC56B2C009C466F /* DownloadViewCell.swift */,
+				D9BEA2571FC56CFF009C466F /* DownloadTableViewController.swift */,
+			);
+			path = DownloadView;
+			sourceTree = "<group>";
+		};
+		D9377D651FC8AA9F004D3A47 /* PersonalInformationView */ = {
+			isa = PBXGroup;
+			children = (
+				D9EF9F521FC19C470069E67B /* PersonalInformationItem.swift */,
+				D9EF9F461FC196980069E67B /* PersonalInformationViewController.swift */,
+			);
+			path = PersonalInformationView;
+			sourceTree = "<group>";
+		};
+		D9377D661FC8AAE3004D3A47 /* MyCourseVIew */ = {
+			isa = PBXGroup;
+			children = (
+				D9EF9F4C1FC196DD0069E67B /* MyCourseViewController.swift */,
+			);
+			path = MyCourseVIew;
+			sourceTree = "<group>";
+		};
+		D9377D671FC8AAF9004D3A47 /* MyHomeworkVIew */ = {
+			isa = PBXGroup;
+			children = (
+				D9EF9F4E1FC196E70069E67B /* MyHomeworkViewController.swift */,
+			);
+			path = MyHomeworkVIew;
+			sourceTree = "<group>";
+		};
+		D9377D681FC8AB0A004D3A47 /* HomeworkRemindView */ = {
+			isa = PBXGroup;
+			children = (
+				D9EF9F501FC1971E0069E67B /* HomeworkRemindViewController.swift */,
+			);
+			path = HomeworkRemindView;
+			sourceTree = "<group>";
+		};
 		D9D8D2641FB30900004E93E5 = {
 			isa = PBXGroup;
 			children = (
@@ -54,9 +154,18 @@
 		D9D8D26F1FB30900004E93E5 /* CSerHelper_ios */ = {
 			isa = PBXGroup;
 			children = (
+				D9377D681FC8AB0A004D3A47 /* HomeworkRemindView */,
+				D9377D671FC8AAF9004D3A47 /* MyHomeworkVIew */,
+				D9377D661FC8AAE3004D3A47 /* MyCourseVIew */,
+				D9377D651FC8AA9F004D3A47 /* PersonalInformationView */,
+				D9377D641FC8AA78004D3A47 /* DownloadView */,
+				D9377D631FC8AA55004D3A47 /* ClassCheckView */,
+				D9377D621FC8AA2D004D3A47 /* ChatView */,
+				D9377D611FC8AA03004D3A47 /* MessageView */,
 				D9D8D2701FB30900004E93E5 /* AppDelegate.swift */,
 				D9D8D2721FB30900004E93E5 /* ViewController.swift */,
 				D9D8D2741FB30900004E93E5 /* Main.storyboard */,
+				D9EF9F541FC1A5020069E67B /* MainTabBarController.swift */,
 				D9D8D2771FB30900004E93E5 /* Assets.xcassets */,
 				D9D8D2791FB30900004E93E5 /* LaunchScreen.storyboard */,
 				D9D8D27C1FB30900004E93E5 /* Info.plist */,
@@ -136,8 +245,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9EF9F411FC16E3A0069E67B /* MessageItem.swift in Sources */,
+				D9BEA2581FC56CFF009C466F /* DownloadTableViewController.swift in Sources */,
 				D9D8D2731FB30900004E93E5 /* ViewController.swift in Sources */,
+				D9EF9F431FC17C720069E67B /* MessageViewCell.swift in Sources */,
+				D9BEA2561FC56B2C009C466F /* DownloadViewCell.swift in Sources */,
+				D9EF9F511FC1971E0069E67B /* HomeworkRemindViewController.swift in Sources */,
+				D9EF9F471FC196980069E67B /* PersonalInformationViewController.swift in Sources */,
+				D9EF9F531FC19C470069E67B /* PersonalInformationItem.swift in Sources */,
+				D9EF9F4B1FC196C00069E67B /* DownloadViewController.swift in Sources */,
+				D9EF9F491FC196B40069E67B /* ClassCheckViewController.swift in Sources */,
+				D9EF9F3D1FC161F60069E67B /* MessageViewController.swift in Sources */,
+				D9EF9F451FC1962B0069E67B /* ChatViewController.swift in Sources */,
+				D9EF9F551FC1A5020069E67B /* MainTabBarController.swift in Sources */,
+				D9BEA25C1FC571AE009C466F /* DownloadItem.swift in Sources */,
 				D9D8D2711FB30900004E93E5 /* AppDelegate.swift in Sources */,
+				D9EF9F4D1FC196DD0069E67B /* MyCourseViewController.swift in Sources */,
+				D9EF9F4F1FC196E70069E67B /* MyHomeworkViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
