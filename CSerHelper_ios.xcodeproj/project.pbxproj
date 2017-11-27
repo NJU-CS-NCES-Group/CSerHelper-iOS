@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9377D6A1FC9B55C004D3A47 /* MyCourseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9377D691FC9B55C004D3A47 /* MyCourseItem.swift */; };
+		D9377D6C1FC9B579004D3A47 /* MyHomeworkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9377D6B1FC9B579004D3A47 /* MyHomeworkItem.swift */; };
+		D9377D6E1FC9B594004D3A47 /* HomeworkRemindItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9377D6D1FC9B594004D3A47 /* HomeworkRemindItem.swift */; };
+		D9377D701FC9E538004D3A47 /* MyCourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9377D6F1FC9E538004D3A47 /* MyCourses.swift */; };
+		D9377D721FC9EB4C004D3A47 /* HomeworkRemindCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9377D711FC9EB4C004D3A47 /* HomeworkRemindCell.swift */; };
+		D9377D741FCA874B004D3A47 /* AddHomeworkRemindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9377D731FCA874B004D3A47 /* AddHomeworkRemindViewController.swift */; };
+		D9377D761FCAF593004D3A47 /* MyHomeworkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9377D751FCAF593004D3A47 /* MyHomeworkCell.swift */; };
+		D9377D781FCAFAD3004D3A47 /* showHomeworkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9377D771FCAFAD3004D3A47 /* showHomeworkItem.swift */; };
 		D9BEA2561FC56B2C009C466F /* DownloadViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BEA2551FC56B2C009C466F /* DownloadViewCell.swift */; };
-		D9BEA2581FC56CFF009C466F /* DownloadTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BEA2571FC56CFF009C466F /* DownloadTableViewController.swift */; };
 		D9BEA25C1FC571AE009C466F /* DownloadItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BEA25B1FC571AE009C466F /* DownloadItem.swift */; };
 		D9D8D2711FB30900004E93E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D8D2701FB30900004E93E5 /* AppDelegate.swift */; };
 		D9D8D2731FB30900004E93E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D8D2721FB30900004E93E5 /* ViewController.swift */; };
@@ -30,8 +37,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D9377D691FC9B55C004D3A47 /* MyCourseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseItem.swift; sourceTree = "<group>"; };
+		D9377D6B1FC9B579004D3A47 /* MyHomeworkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHomeworkItem.swift; sourceTree = "<group>"; };
+		D9377D6D1FC9B594004D3A47 /* HomeworkRemindItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkRemindItem.swift; sourceTree = "<group>"; };
+		D9377D6F1FC9E538004D3A47 /* MyCourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourses.swift; sourceTree = "<group>"; };
+		D9377D711FC9EB4C004D3A47 /* HomeworkRemindCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkRemindCell.swift; sourceTree = "<group>"; };
+		D9377D731FCA874B004D3A47 /* AddHomeworkRemindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHomeworkRemindViewController.swift; sourceTree = "<group>"; };
+		D9377D751FCAF593004D3A47 /* MyHomeworkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHomeworkCell.swift; sourceTree = "<group>"; };
+		D9377D771FCAFAD3004D3A47 /* showHomeworkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showHomeworkItem.swift; sourceTree = "<group>"; };
 		D9BEA2551FC56B2C009C466F /* DownloadViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewCell.swift; sourceTree = "<group>"; };
-		D9BEA2571FC56CFF009C466F /* DownloadTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadTableViewController.swift; sourceTree = "<group>"; };
 		D9BEA25B1FC571AE009C466F /* DownloadItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadItem.swift; sourceTree = "<group>"; };
 		D9D8D26D1FB30900004E93E5 /* CSerHelper_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSerHelper_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D8D2701FB30900004E93E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,7 +111,6 @@
 				D9EF9F4A1FC196C00069E67B /* DownloadViewController.swift */,
 				D9BEA25B1FC571AE009C466F /* DownloadItem.swift */,
 				D9BEA2551FC56B2C009C466F /* DownloadViewCell.swift */,
-				D9BEA2571FC56CFF009C466F /* DownloadTableViewController.swift */,
 			);
 			path = DownloadView;
 			sourceTree = "<group>";
@@ -114,6 +127,8 @@
 		D9377D661FC8AAE3004D3A47 /* MyCourseVIew */ = {
 			isa = PBXGroup;
 			children = (
+				D9377D691FC9B55C004D3A47 /* MyCourseItem.swift */,
+				D9377D6F1FC9E538004D3A47 /* MyCourses.swift */,
 				D9EF9F4C1FC196DD0069E67B /* MyCourseViewController.swift */,
 			);
 			path = MyCourseVIew;
@@ -122,7 +137,10 @@
 		D9377D671FC8AAF9004D3A47 /* MyHomeworkVIew */ = {
 			isa = PBXGroup;
 			children = (
+				D9377D6B1FC9B579004D3A47 /* MyHomeworkItem.swift */,
 				D9EF9F4E1FC196E70069E67B /* MyHomeworkViewController.swift */,
+				D9377D751FCAF593004D3A47 /* MyHomeworkCell.swift */,
+				D9377D771FCAFAD3004D3A47 /* showHomeworkItem.swift */,
 			);
 			path = MyHomeworkVIew;
 			sourceTree = "<group>";
@@ -130,7 +148,10 @@
 		D9377D681FC8AB0A004D3A47 /* HomeworkRemindView */ = {
 			isa = PBXGroup;
 			children = (
+				D9377D6D1FC9B594004D3A47 /* HomeworkRemindItem.swift */,
 				D9EF9F501FC1971E0069E67B /* HomeworkRemindViewController.swift */,
+				D9377D711FC9EB4C004D3A47 /* HomeworkRemindCell.swift */,
+				D9377D731FCA874B004D3A47 /* AddHomeworkRemindViewController.swift */,
 			);
 			path = HomeworkRemindView;
 			sourceTree = "<group>";
@@ -245,17 +266,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9377D721FC9EB4C004D3A47 /* HomeworkRemindCell.swift in Sources */,
+				D9377D6C1FC9B579004D3A47 /* MyHomeworkItem.swift in Sources */,
 				D9EF9F411FC16E3A0069E67B /* MessageItem.swift in Sources */,
-				D9BEA2581FC56CFF009C466F /* DownloadTableViewController.swift in Sources */,
 				D9D8D2731FB30900004E93E5 /* ViewController.swift in Sources */,
 				D9EF9F431FC17C720069E67B /* MessageViewCell.swift in Sources */,
+				D9377D781FCAFAD3004D3A47 /* showHomeworkItem.swift in Sources */,
 				D9BEA2561FC56B2C009C466F /* DownloadViewCell.swift in Sources */,
 				D9EF9F511FC1971E0069E67B /* HomeworkRemindViewController.swift in Sources */,
 				D9EF9F471FC196980069E67B /* PersonalInformationViewController.swift in Sources */,
 				D9EF9F531FC19C470069E67B /* PersonalInformationItem.swift in Sources */,
+				D9377D761FCAF593004D3A47 /* MyHomeworkCell.swift in Sources */,
+				D9377D741FCA874B004D3A47 /* AddHomeworkRemindViewController.swift in Sources */,
+				D9377D701FC9E538004D3A47 /* MyCourses.swift in Sources */,
+				D9377D6E1FC9B594004D3A47 /* HomeworkRemindItem.swift in Sources */,
 				D9EF9F4B1FC196C00069E67B /* DownloadViewController.swift in Sources */,
 				D9EF9F491FC196B40069E67B /* ClassCheckViewController.swift in Sources */,
 				D9EF9F3D1FC161F60069E67B /* MessageViewController.swift in Sources */,
+				D9377D6A1FC9B55C004D3A47 /* MyCourseItem.swift in Sources */,
 				D9EF9F451FC1962B0069E67B /* ChatViewController.swift in Sources */,
 				D9EF9F551FC1A5020069E67B /* MainTabBarController.swift in Sources */,
 				D9BEA25C1FC571AE009C466F /* DownloadItem.swift in Sources */,
