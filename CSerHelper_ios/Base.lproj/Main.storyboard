@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CSerHelper_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="CSerHelper_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,7 +43,7 @@
                                                         <rect key="frame" x="51.999999999999993" y="0.0" width="98.333333333333314" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="username"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -62,7 +62,7 @@
                                                 <rect key="frame" x="51.999999999999993" y="0.0" width="98.333333333333314" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="password"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -71,7 +71,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                         <state key="normal" title="登录"/>
                                         <connections>
-                                            <segue destination="e9c-Dz-50z" kind="presentation" id="TM2-Ro-1oN"/>
+                                            <action selector="LoginBtn" destination="BYZ-38-t0r" eventType="touchUpInside" id="dJb-Xp-m4C"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -84,6 +84,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="numberText" destination="HEZ-AM-fxd" id="xJu-aj-Wsx"/>
+                        <outlet property="passwordText" destination="qbQ-cN-SLZ" id="3tN-nI-Qb1"/>
+                        <segue destination="e9c-Dz-50z" kind="presentation" identifier="Login" id="9Q3-iv-LDc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,7 +113,7 @@
         <!--讨论交流-->
         <scene sceneID="mr3-8w-sH3">
             <objects>
-                <viewController id="aWn-eh-bzF" sceneMemberID="viewController">
+                <viewController id="aWn-eh-bzF" customClass="ChatViewController" customModule="CSerHelper_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tu4-Qh-pSp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Xx-Oc-72H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2333" y="462"/>
+            <point key="canvasLocation" x="2331.8840579710145" y="461.41304347826093"/>
         </scene>
         <!--课堂考勤-->
         <scene sceneID="Lxd-OU-y5d">

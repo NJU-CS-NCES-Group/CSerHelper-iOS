@@ -19,7 +19,7 @@ class PersonalInformationViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        localInformation=getInformation()
+        getInformation()
         nameLabel.text=localInformation.name
         studentNumberLabel.text=localInformation.number
         emailText.text=localInformation.email
@@ -33,9 +33,32 @@ class PersonalInformationViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func getInformation() -> PersonalInformationItem {
-        let ret=PersonalInformationItem(number:"1234567",name:"计小科",email:"12345678",phone:"123456")
-        return ret
+    func getInformation(){
+        let str = desHost + "id=0&idnumber=\(userNumber!)&password=\(userPassword!)"
+        let url: NSURL = NSURL(string:str)!
+        let session: URLSession = URLSession.shared
+        let semaphore = DispatchSemaphore(value: 0)
+        let dataTask: URLSessionDataTask = session.dataTask(with: url as URL){ (data, response, error) in
+            if(error != nil){
+                print(error.debugDescription)
+                let alertController = UIAlertController(title: "系统提示",
+                                                        message: "网络错误", preferredStyle: .alert)
+                let confirmAction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                alertController.addAction(confirmAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+            else{
+                if let json = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String : Any]{
+                    print(json)
+                    //let sign = json["sign"] as! Int
+                    self.localInformation = PersonalInformationItem(number:userNumber!,name:(json["firstname"] as! String),email:json["email"] as? String,phone:json["phone1"] as? String)
+                    semaphore.signal()
+                }
+            }
+        }
+        dataTask.resume()
+        semaphore.wait()
+        return
     }
     @IBAction func pressEdit(){
         self.navigationItem.rightBarButtonItem=UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: #selector(pressSave))

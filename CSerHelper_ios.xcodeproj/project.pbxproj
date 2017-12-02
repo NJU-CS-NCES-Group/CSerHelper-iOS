@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D90B26351FD291E7000C734B /* BasicVar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90B26341FD291E7000C734B /* BasicVar.swift */; };
+		D924B5201FD293BF003E0DCF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D924B51F1FD293BF003E0DCF /* LoginViewController.swift */; };
 		D9377D6A1FC9B55C004D3A47 /* MyCourseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9377D691FC9B55C004D3A47 /* MyCourseItem.swift */; };
 		D9377D6C1FC9B579004D3A47 /* MyHomeworkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9377D6B1FC9B579004D3A47 /* MyHomeworkItem.swift */; };
 		D9377D6E1FC9B594004D3A47 /* HomeworkRemindItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9377D6D1FC9B594004D3A47 /* HomeworkRemindItem.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D90B26341FD291E7000C734B /* BasicVar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicVar.swift; sourceTree = "<group>"; };
+		D924B51F1FD293BF003E0DCF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D9377D691FC9B55C004D3A47 /* MyCourseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseItem.swift; sourceTree = "<group>"; };
 		D9377D6B1FC9B579004D3A47 /* MyHomeworkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHomeworkItem.swift; sourceTree = "<group>"; };
 		D9377D6D1FC9B594004D3A47 /* HomeworkRemindItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkRemindItem.swift; sourceTree = "<group>"; };
@@ -184,6 +188,8 @@
 				D9377D621FC8AA2D004D3A47 /* ChatView */,
 				D9377D611FC8AA03004D3A47 /* MessageView */,
 				D9D8D2701FB30900004E93E5 /* AppDelegate.swift */,
+				D924B51F1FD293BF003E0DCF /* LoginViewController.swift */,
+				D90B26341FD291E7000C734B /* BasicVar.swift */,
 				D9D8D2721FB30900004E93E5 /* ViewController.swift */,
 				D9D8D2741FB30900004E93E5 /* Main.storyboard */,
 				D9EF9F541FC1A5020069E67B /* MainTabBarController.swift */,
@@ -269,6 +275,7 @@
 				D9377D721FC9EB4C004D3A47 /* HomeworkRemindCell.swift in Sources */,
 				D9377D6C1FC9B579004D3A47 /* MyHomeworkItem.swift in Sources */,
 				D9EF9F411FC16E3A0069E67B /* MessageItem.swift in Sources */,
+				D90B26351FD291E7000C734B /* BasicVar.swift in Sources */,
 				D9D8D2731FB30900004E93E5 /* ViewController.swift in Sources */,
 				D9EF9F431FC17C720069E67B /* MessageViewCell.swift in Sources */,
 				D9377D781FCAFAD3004D3A47 /* showHomeworkItem.swift in Sources */,
@@ -289,6 +296,7 @@
 				D9BEA25C1FC571AE009C466F /* DownloadItem.swift in Sources */,
 				D9D8D2711FB30900004E93E5 /* AppDelegate.swift in Sources */,
 				D9EF9F4D1FC196DD0069E67B /* MyCourseViewController.swift in Sources */,
+				D924B5201FD293BF003E0DCF /* LoginViewController.swift in Sources */,
 				D9EF9F4F1FC196E70069E67B /* MyHomeworkViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
