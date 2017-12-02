@@ -34,12 +34,11 @@ class PersonalInformationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     func getInformation(){
-        let str = desHost + "id=0&idnumber=\(userNumber!)&password=\(userPassword!)"
-        let url: NSURL = NSURL(string:str)!
-        let session: URLSession = URLSession.shared
+        let connectservice = ConnectService(id: "0", number: userNumber!, password: userPassword!)
         let semaphore = DispatchSemaphore(value: 0)
-        let dataTask: URLSessionDataTask = session.dataTask(with: url as URL){ (data, response, error) in
+        connectservice.startService(){ (data, response, error) in
             if(error != nil){
+                //提示网络错误
                 print(error.debugDescription)
                 let alertController = UIAlertController(title: "系统提示",
                                                         message: "网络错误", preferredStyle: .alert)
@@ -48,15 +47,24 @@ class PersonalInformationViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
             }
             else{
-                if let json = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String : Any]{
-                    print(json)
+                let decoder = JSONDecoder()
+                if let json = try? decoder.decode(JSONcoder0.self, from: data!){
+                    //print(json)
                     //let sign = json["sign"] as! Int
-                    self.localInformation = PersonalInformationItem(number:userNumber!,name:(json["firstname"] as! String),email:json["email"] as? String,phone:json["phone1"] as? String)
-                    semaphore.signal()
+                    self.localInformation = PersonalInformationItem(number:userNumber!,name:(json.firstname),email:json.email,phone:json.phone1)
+                }
+                else{
+                    DispatchQueue.main.async {
+                        let alertController = UIAlertController(title: "系统提示",
+                                                                message: "解码错误", preferredStyle: .alert)
+                        let confirmAction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                        alertController.addAction(confirmAction)
+                        self.present(alertController, animated: true, completion: nil)
+                    }
                 }
             }
+            semaphore.signal()
         }
-        dataTask.resume()
         semaphore.wait()
         return
     }

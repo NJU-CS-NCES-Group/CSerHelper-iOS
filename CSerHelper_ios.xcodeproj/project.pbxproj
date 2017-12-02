@@ -19,6 +19,7 @@
 		D9377D781FCAFAD3004D3A47 /* showHomeworkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9377D771FCAFAD3004D3A47 /* showHomeworkItem.swift */; };
 		D9BEA2561FC56B2C009C466F /* DownloadViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BEA2551FC56B2C009C466F /* DownloadViewCell.swift */; };
 		D9BEA25C1FC571AE009C466F /* DownloadItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BEA25B1FC571AE009C466F /* DownloadItem.swift */; };
+		D9D82D871FD2D5BF00D54DCD /* ConnectHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D82D861FD2D5BF00D54DCD /* ConnectHost.swift */; };
 		D9D8D2711FB30900004E93E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D8D2701FB30900004E93E5 /* AppDelegate.swift */; };
 		D9D8D2731FB30900004E93E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D8D2721FB30900004E93E5 /* ViewController.swift */; };
 		D9D8D2761FB30900004E93E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9D8D2741FB30900004E93E5 /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		D9377D771FCAFAD3004D3A47 /* showHomeworkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showHomeworkItem.swift; sourceTree = "<group>"; };
 		D9BEA2551FC56B2C009C466F /* DownloadViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewCell.swift; sourceTree = "<group>"; };
 		D9BEA25B1FC571AE009C466F /* DownloadItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadItem.swift; sourceTree = "<group>"; };
+		D9D82D861FD2D5BF00D54DCD /* ConnectHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectHost.swift; sourceTree = "<group>"; };
 		D9D8D26D1FB30900004E93E5 /* CSerHelper_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSerHelper_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D8D2701FB30900004E93E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9D8D2721FB30900004E93E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				D9D8D2721FB30900004E93E5 /* ViewController.swift */,
 				D9D8D2741FB30900004E93E5 /* Main.storyboard */,
 				D9EF9F541FC1A5020069E67B /* MainTabBarController.swift */,
+				D9D82D861FD2D5BF00D54DCD /* ConnectHost.swift */,
 				D9D8D2771FB30900004E93E5 /* Assets.xcassets */,
 				D9D8D2791FB30900004E93E5 /* LaunchScreen.storyboard */,
 				D9D8D27C1FB30900004E93E5 /* Info.plist */,
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9377D721FC9EB4C004D3A47 /* HomeworkRemindCell.swift in Sources */,
+				D9D82D871FD2D5BF00D54DCD /* ConnectHost.swift in Sources */,
 				D9377D6C1FC9B579004D3A47 /* MyHomeworkItem.swift in Sources */,
 				D9EF9F411FC16E3A0069E67B /* MessageItem.swift in Sources */,
 				D90B26351FD291E7000C734B /* BasicVar.swift in Sources */,

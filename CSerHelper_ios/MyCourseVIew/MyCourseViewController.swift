@@ -76,7 +76,7 @@ class MyCourseViewController: UIViewController {
             addCourses(course: course)
         }
     }
-    
+    //只显示大二上学期 semster = 10
     func getMyCourses() -> [MyCourses] {
         let courseItem1 = MyCourseItem(oddOrEven: 0, classroom: "逸夫楼", weekly: 1, startTime: 1, endTime: 2)
         let courseItem2 = MyCourseItem(oddOrEven: 1, classroom: "仙一", weekly: 3, startTime: 3, endTime: 4)
@@ -85,6 +85,49 @@ class MyCourseViewController: UIViewController {
         let course1 = MyCourses(name: "概率论", startWeek: 1, endWeek: 18, courseInformations: [courseItem1,courseItem2], teacherName: ["芙神"], homeworks: [])
         let course2 = MyCourses(name: "移动互联", startWeek: 1, endWeek: 18, courseInformations: [courseItem3,courseItem4], teacherName: ["曹春"], homeworks: [])
         let ret = [course1,course2]
+        
+        
+        let connectService = ConnectService(id: "2", number: userNumber!, password: userPassword!)
+        connectService.startService(){(data, response, error) in
+            //print(data!)
+            if(error != nil){
+                //提示网络错误
+                print(error.debugDescription)
+                let alertController = UIAlertController(title: "系统提示",message: "网络错误", preferredStyle: .alert)
+                let confirmAction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                alertController.addAction(confirmAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+            else{
+                let decoder = JSONDecoder()
+                if let json = try? decoder.decode([JSONcoder2].self, from: data!){
+                    //print(json)
+                    for courses in json{
+                        var courseitem:[JSONcoder2.Time] = []
+                        
+                        for course in courses.time{
+                            if course.semester == "10"{
+                                courseitem.append(course)
+                            }
+                        }
+                        
+                        if !courseitem.isEmpty{
+                            print(courseitem)
+                        }
+                    }
+                }
+                else{
+                    DispatchQueue.main.async {
+                        let alertController = UIAlertController(title: "系统提示",
+                                                                message: "解码错误", preferredStyle: .alert)
+                        let confirmAction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                        alertController.addAction(confirmAction)
+                        self.present(alertController, animated: true, completion: nil)
+                    }
+                }
+            }
+        }
+        
         return ret
     }
     
