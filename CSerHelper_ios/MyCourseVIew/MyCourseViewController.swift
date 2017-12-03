@@ -25,7 +25,7 @@ class MyCourseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        myCourses = getMyCourses()
+        getMyCourses()
         reloadClassView()
         // Do any additional setup after loading the view.
     }
@@ -77,15 +77,16 @@ class MyCourseViewController: UIViewController {
         }
     }
     //只显示大二上学期 semster = 10
-    func getMyCourses() -> [MyCourses] {
-        let courseItem1 = MyCourseItem(oddOrEven: 0, classroom: "逸夫楼", weekly: 1, startTime: 1, endTime: 2)
-        let courseItem2 = MyCourseItem(oddOrEven: 1, classroom: "仙一", weekly: 3, startTime: 3, endTime: 4)
-        let courseItem3 = MyCourseItem(oddOrEven: 2, classroom: "仙一", weekly: 3, startTime: 3, endTime: 4)
-        let courseItem4 = MyCourseItem(oddOrEven: 0, classroom: "仙二", weekly: 5, startTime: 9, endTime: 11)
-        let course1 = MyCourses(name: "概率论", startWeek: 1, endWeek: 18, courseInformations: [courseItem1,courseItem2], teacherName: ["芙神"], homeworks: [])
-        let course2 = MyCourses(name: "移动互联", startWeek: 1, endWeek: 18, courseInformations: [courseItem3,courseItem4], teacherName: ["曹春"], homeworks: [])
-        let ret = [course1,course2]
+    func getMyCourses() -> Void {
+//        let courseItem1 = MyCourseItem(oddOrEven: 0, classroom: "逸夫楼", weekly: 1, startTime: 1, endTime: 2)
+//        let courseItem2 = MyCourseItem(oddOrEven: 1, classroom: "仙一", weekly: 3, startTime: 3, endTime: 4)
+//        let courseItem3 = MyCourseItem(oddOrEven: 2, classroom: "仙一", weekly: 3, startTime: 3, endTime: 4)
+//        let courseItem4 = MyCourseItem(oddOrEven: 0, classroom: "仙二", weekly: 5, startTime: 9, endTime: 11)
+//        let course1 = MyCourses(name: "概率论", startWeek: 1, endWeek: 18, courseInformations: [courseItem1,courseItem2], teacherName: ["芙神"], homeworks: [])
+//        let course2 = MyCourses(name: "移动互联", startWeek: 1, endWeek: 18, courseInformations: [courseItem3,courseItem4], teacherName: ["曹春"], homeworks: [])
+//        let ret = [course1,course2]
         
+        var semaphore = DispatchSemaphore(value: 0)
         
         let connectService = ConnectService(id: "2", number: userNumber!, password: userPassword!)
         connectService.startService(){(data, response, error) in
@@ -104,7 +105,7 @@ class MyCourseViewController: UIViewController {
                     //print(json)
                     for courses in json{
                         var courseitem:[JSONcoder2.Time] = []
-                        
+                        var courseItem:[MyCourseItem] = []
                         for course in courses.time{
                             if course.semester == "10"{
                                 courseitem.append(course)
@@ -113,6 +114,21 @@ class MyCourseViewController: UIViewController {
                         
                         if !courseitem.isEmpty{
                             print(courseitem)
+                            //以下逻辑当且仅当同一天的课全部连上
+                            for ci in courseitem{
+                                var flag = false
+                                for cii in courseItem{
+                                    if Int(ci.weekday)!+1 == cii.weekly{
+                                        cii.endTime = Int(ci.classtime)!+1
+                                        flag = true
+                                        break
+                                    }
+                                }
+                                if flag == false{
+                                    courseItem.append(MyCourseItem(oddOrEven: Int(ci.weektype)!, classroom: ci.fullname, weekly: Int(ci.weekday)!+1, startTime: Int(ci.classtime)!+1, endTime: Int(ci.classtime)!+1))
+                                }
+                            }
+                            self.myCourses.append(MyCourses(name: courses.fullname, startWeek: 1, endWeek: 18, courseInformations: courseItem, teacherName: courses.teachers, homeworks: []))
                         }
                     }
                 }
@@ -126,9 +142,9 @@ class MyCourseViewController: UIViewController {
                     }
                 }
             }
+            semaphore.signal()
         }
-        
-        return ret
+        semaphore.wait()
     }
     
     @IBAction func subWeekTapped(){

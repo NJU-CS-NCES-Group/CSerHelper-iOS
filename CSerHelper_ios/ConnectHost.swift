@@ -64,5 +64,5 @@ struct JSONcoder2 : Codable {
         let semester:String
     }
     let time:[Time]
-    let teachers:[String?]
+    let teachers:[String]
 }
