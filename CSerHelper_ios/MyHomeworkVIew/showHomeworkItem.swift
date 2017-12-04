@@ -13,13 +13,13 @@ class showHomeworkItem : NSObject {
     var courseName : String?
     var information : String?
     var submitTime : Date?
-    var isGraded : Bool = false
-    init(courseName:String?,homeworkName:String?,information:String?,submitTime:Date?,isGraded:Bool) {
+    var grade : String? = nil
+    init(courseName:String?,homeworkName:String?,information:String?,submitTime:Date?,grade:String?) {
         self.information = information
         self.courseName = courseName
         self.homeworkName = homeworkName
         self.submitTime = submitTime
-        self.isGraded = isGraded
+        self.grade = grade
     }
     init(name:String?,submitTime:Date?) {
         self.homeworkName = name

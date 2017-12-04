@@ -12,12 +12,12 @@ class MyHomeworkItem : NSObject {
     var name : String?
     var information : String?
     var submitTime : Date?
-    var isGraded : Bool = false
-    init(name:String?,information:String?,submitTime:Date?,isGraded:Bool) {
+    var grade : String? = nil
+    init(name:String?,information:String?,submitTime:Date?,grade:String?) {
         self.information = information
         self.name = name
         self.submitTime = submitTime
-        self.isGraded = isGraded
+        self.grade = grade
     }
     init(name:String?,submitTime:Date?) {
         self.name = name

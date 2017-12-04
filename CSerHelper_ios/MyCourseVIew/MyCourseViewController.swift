@@ -113,7 +113,7 @@ class MyCourseViewController: UIViewController {
                         }
                         
                         if !courseitem.isEmpty{
-                            print(courseitem)
+                            //print(courseitem)
                             //以下逻辑当且仅当同一天的课全部连上
                             for ci in courseitem{
                                 var flag = false

@@ -18,10 +18,10 @@ class MyHomeworkViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        myCourses = getMyCourses()
+        getMyCourses()
         divideList()
         showList = comingHomeworkList
-        tableView.rowHeight = 100
+        tableView.rowHeight = 150
         // Do any additional setup after loading the view.
     }
 
@@ -30,25 +30,62 @@ class MyHomeworkViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func getMyCourses() -> [MyCourses] {
-        var ret:[MyCourses] = []
-        let formatter = DateFormatter()
-        formatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
-        let hw1:[MyHomeworkItem] = [MyHomeworkItem.init(name: "作业一", information: "说明说明", submitTime: formatter.date(from: "2017-11-25 23:59:59"), isGraded: true) ,MyHomeworkItem.init(name: "作业二", information: "说明说明", submitTime: formatter.date(from: "2017-11-30 23:59:59"), isGraded: false)]
-        let hw2:[MyHomeworkItem] = [MyHomeworkItem.init(name: "作业三", information: "说明说明", submitTime: formatter.date(from: "2017-11-25 23:59:59"), isGraded:false),MyHomeworkItem.init(name: "作业四", information: "说明说明", submitTime: formatter.date(from: "2017-11-30 23:59:59"), isGraded: false)]
-        ret.append(MyCourses.init(name: "移动互联", homeworks: hw1))
-        ret.append(MyCourses.init(name: "概率论", homeworks: hw2))
-        return ret
+    func getMyCourses() -> Void {
+//        var ret:[MyCourses] = []
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
+//        let hw1:[MyHomeworkItem] = [MyHomeworkItem.init(name: "作业一", information: "说明说明", submitTime: formatter.date(from: "2017-11-25 23:59:59"), grade: nil) ,MyHomeworkItem.init(name: "作业二", information: "说明说明", submitTime: formatter.date(from: "2017-11-30 23:59:59"), isGraded: false)]
+//        let hw2:[MyHomeworkItem] = [MyHomeworkItem.init(name: "作业三", information: "说明说明", submitTime: formatter.date(from: "2017-11-25 23:59:59"), isGraded:false),MyHomeworkItem.init(name: "作业四", information: "说明说明", submitTime: formatter.date(from: "2017-11-30 23:59:59"), isGraded: false)]
+//        ret.append(MyCourses.init(name: "移动互联", homeworks: hw1))
+//        ret.append(MyCourses.init(name: "概率论", homeworks: hw2))
+//        return ret
+        let connectservice = ConnectService(id: "4", number: userNumber!, password: userPassword!)
+        let semaphore = DispatchSemaphore(value: 0)
+        connectservice.startService(){ (data, response, error) in
+            if(error != nil){
+                //提示网络错误
+                print(error.debugDescription)
+                let alertController = UIAlertController(title: "系统提示",
+                                                        message: "网络错误", preferredStyle: .alert)
+                let confirmAction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                alertController.addAction(confirmAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+            else{
+                let decoder = JSONDecoder()
+                if let json = try? decoder.decode([JSONcoder4].self, from: data!){
+                    //print(json)
+                    for item in json{
+                        var hw : [MyHomeworkItem] = []
+                        for hwitem in item.homework{
+                            hw.append(MyHomeworkItem(name: hwitem.name, information: hwitem.intro, submitTime: Date.init(timeIntervalSince1970: TimeInterval.init(Int(hwitem.cutoffdate)!)), grade: hwitem.grade))
+                        }
+                        self.myCourses.append(MyCourses(name: item.classname, homeworks: hw))
+                    }
+                }
+                else{
+                    DispatchQueue.main.async {
+                        let alertController = UIAlertController(title: "系统提示",
+                                                                message: "解码错误", preferredStyle: .alert)
+                        let confirmAction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                        alertController.addAction(confirmAction)
+                        self.present(alertController, animated: true, completion: nil)
+                    }
+                }
+            }
+            semaphore.signal()
+        }
+        semaphore.wait()
     }
 
     func divideList() {
         for courseitem in myCourses {
             for homeworkitem in courseitem.homeworks{
                 if homeworkitem.submitTime! > Date() {
-                    comingHomeworkList.append(showHomeworkItem(courseName: courseitem.name, homeworkName: homeworkitem.name, information: homeworkitem.information, submitTime: homeworkitem.submitTime, isGraded: homeworkitem.isGraded))
+                    comingHomeworkList.append(showHomeworkItem(courseName: courseitem.name, homeworkName: homeworkitem.name, information: homeworkitem.information, submitTime: homeworkitem.submitTime, grade: homeworkitem.grade))
                 }
                 else{
-                    finishHomeworkList.append(showHomeworkItem(courseName: courseitem.name, homeworkName: homeworkitem.name, information: homeworkitem.information, submitTime: homeworkitem.submitTime, isGraded: homeworkitem.isGraded))
+                    finishHomeworkList.append(showHomeworkItem(courseName: courseitem.name, homeworkName: homeworkitem.name, information: homeworkitem.information, submitTime: homeworkitem.submitTime, grade: homeworkitem.grade))
                 }
             }
         }
@@ -93,8 +130,8 @@ extension MyHomeworkViewController : UITableViewDelegate,UITableViewDataSource{
             cell?.timeOrGrade.text = formatter.string(from: item.submitTime!)
         }
         else {
-            if item.isGraded {
-                cell?.timeOrGrade.text = "已评分"
+            if item.grade != nil{
+                cell?.timeOrGrade.text = "已评分:" + item.grade!
             }
             else{
                 cell?.timeOrGrade.text = "未评分"
