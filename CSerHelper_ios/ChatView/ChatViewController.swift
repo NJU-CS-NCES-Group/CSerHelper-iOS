@@ -151,6 +151,7 @@ extension ChatViewController :UIPickerViewDelegate , UIPickerViewDataSource{
 
 extension ChatViewController : UITableViewDelegate ,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         self.performSegue(withIdentifier: "ShowChatDetailView", sender: items[indexPath.row])
         
     }
@@ -166,6 +167,7 @@ extension ChatViewController : UITableViewDelegate ,UITableViewDataSource{
         cell?.SubjectLabel.text = item.subject
         cell?.messageLabel.text = item.message
         cell?.timeLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(exactly: Int(item.created)!)!))
+        cell?.accessoryType = .disclosureIndicator
         return cell!
     }
 }
